@@ -3,14 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>user-system</groupId>
     <artifactId>user-system</artifactId>
     <version>1.0-SNAPSHOT</version>
-<!--    <properties>-->
-<!--        <maven.compiler.source>11</maven.compiler.source>-->
-<!--        <maven.compiler.target>11</maven.compiler.target>-->
-<!--    </properties>-->
     <packaging>war</packaging>
 
     <dependencies>
@@ -54,11 +49,6 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.eclipse.jetty</groupId>-->
-<!--            <artifactId>jetty-maven-plugin</artifactId>-->
-<!--            <version>9.4.45.v20220203</version>-->
-<!--        </dependency>-->
     </dependencies>
     <build>
         <plugins>
@@ -76,6 +66,14 @@
                     </webApp>
                     <stopPort/>
                     <stopKey/>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
                 </configuration>
             </plugin>
         </plugins>

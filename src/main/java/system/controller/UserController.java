@@ -35,7 +35,9 @@ public class UserController {
 
     @RequestMapping(value = "/check", method = RequestMethod.POST)
     public @ResponseBody String checkUser(@ModelAttribute("userFromServer") User user){
-        if ("admin".equals(user.getName()) && "admin".equals(user.getPassword()))
+        User userFromDao = userService.getByName(user.getName());
+        if (userFromDao == null) return "user is not a known";
+        if (userFromDao.equals(user))
         {
             return "valid";
         }

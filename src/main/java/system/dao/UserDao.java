@@ -15,4 +15,12 @@ public class UserDao {
     public List<User> getAllUsers(){
         return  users;
     }
+
+    public User getByName(String name) {
+        for (User el: users) {
+            if (el.getName().equals(name))
+                return el;
+        }
+        return null;
+    }
 }
